@@ -11,7 +11,7 @@
         {
             "label": "save and compile for C++",
             "command": "g++",
-            "args": ["${file}", "-o", "${fileDirname}/${fileBasenameNoExtension}"],
+            "args": ["-g", "${file}", "-o", "${fileDirname}/${fileBasenameNoExtension}"],
             "group": "build",
 
             //컴파일시 에러를 편집기에반영
@@ -33,7 +33,7 @@
         {
             "label": "save and compile for C",
             "command": "gcc",
-            "args": ["${file}", "-o", "${fileDirname}/${fileBasenameNoExtension}"],
+            "args": ["-g", "${file}", "-o", "${fileDirname}/${fileBasenameNoExtension}"],
             "group": "build",
 
             //컴파일시 에러를 편집기에반영
