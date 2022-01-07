@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "*.tcc": "cpp"
     },
 
     "C_Cpp.clang_format_style": "{ IndentWidth: 4, ColumnLimit: 80 }",
