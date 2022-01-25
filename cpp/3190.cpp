@@ -7,17 +7,18 @@ using namespace std;
 int board[102][102] = {0}; // 전체 판
 int sec[102] = {0};        //방향 전환 시간 배열
 char dir[102] = {0};       // 좌회전,우회전 배열
-list<int *> snake;
-list<int *>::iterator iter;
 
 void changeDir(char *, char); //방향전환함수
 
 int main() {
-    int N, k, l, s, tmp = 0;
+    int N, k, l = 0, s = 0, tmp = 0;
     int m, n, flg = 1;
     char g = 'R';
     // list에 집어넣을 좌표 배열
     int *arr = new int[2]{1, 1};
+
+    list<int *> snake;
+    list<int *>::iterator iter;
 
     scanf("%d %d", &N, &k);
     for (int i = 0; i < k; i++) {

@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    int n, m, cnt = 0;
+    int n = 0, m = 0, cnt = 0;
     list<int> circular;
     list<int>::iterator iter;
 
