@@ -30,11 +30,7 @@ int main() {
             while (!stk.empty() && stk.top()[1] < height) {
                 int k = stk.top()[0];
                 stk.pop();
-                if (stk.empty()) {
-                    hArr[k - 1] = 0;
-                } else {
-                    hArr[k - 1] = stk.top()[0];
-                }
+                hArr[k - 1] = stk.empty() ? 0 : stk.top()[0];
             }
             stk.push(ptr);
         }
@@ -42,11 +38,7 @@ int main() {
     while (!stk.empty()) {
         int k = stk.top()[0];
         stk.pop();
-        if (stk.empty()) {
-            hArr[k - 1] = 0;
-        } else {
-            hArr[k - 1] = stk.top()[0];
-        }
+        hArr[k - 1] = stk.empty() ? 0 : stk.top()[0];
     }
 
     for (int i = 0; i < n; i++) {
