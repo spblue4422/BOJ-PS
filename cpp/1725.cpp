@@ -15,14 +15,15 @@ int main() {
 
     for (int i = 0; i < n; i++) {
         scanf("%lld", &height);
+        //새로 푸쉬해줄 노드
         ptr = new long long[2]{i + 1, height};
+
         if (stk.empty()) {
             stk.push(ptr);
             continue;
         }
 
         if (stk.top()[1] <= height) {
-            ptr = new long long[2]{i + 1, height};
             stk.push(ptr);
         } else {
             topW = stk.top()[0];
@@ -32,7 +33,6 @@ int main() {
                 f = stk.empty() ? 0 : stk.top()[0];
                 M = max((topW - f) * tmp, M);
             }
-            ptr = new long long[2]{i + 1, height};
             stk.push(ptr);
         }
     }
