@@ -6,6 +6,7 @@ using namespace std;
 
 int hArr[500000] = {0};
 
+//뒤집힌 오큰수 문제
 int main() {
     int n = 0;
     long long height = 0;
