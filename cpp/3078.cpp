@@ -39,7 +39,8 @@ int main() {
             if ((*iter).length == len) {
                 while ((*iter).rank - rnk > k) {
                     Q.pop();
-                    cnt += Q.size();
+                    cnt += Q.size(); //지금 큐에 들어가있는 친구들이 방금 pop한
+                                     //친구와 잘 어울리는 친구
                     // Q가 비어있다면 Q.front()에서 segmentation fault가
                     //나올 수 있으므로, 비어있는지 확인하고 넣어줘야함.
                     rnk = Q.empty() ? (*iter).rank : Q.front().rank;
