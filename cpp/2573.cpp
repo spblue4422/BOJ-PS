@@ -16,6 +16,7 @@ struct glac {
 queue<glac> que;
 
 // bfs를 사용해서 품.
+// 코드 개선의 여지가 상당히 많을것 같은데
 int main() {
     int N, M, dx, dy, tmp = 0, year = 0;
     scanf("%d %d", &N, &M);
