@@ -9,6 +9,7 @@ using namespace std;
 int sixLevel(int idx);
 
 struct ints {
+    //번호, 도달 단계
     int idx, lev;
 };
 
@@ -16,11 +17,11 @@ vector<int> vec[101];
 int N;
 
 int main() {
-    int M, tmp1, tmp2, m = 1000000, t;
-    // int arr[101] = {0};
+    int M, tmp1, tmp2, m = 1000000, t, sL;
 
     scanf("%d %d", &N, &M);
 
+    //양방향 인접리스트 만들기
     for (int i = 0; i < M; i++) {
         scanf("%d %d", &tmp1, &tmp2);
         vec[tmp1].push_back(tmp2);
@@ -28,9 +29,11 @@ int main() {
     }
 
     for (int i = 1; i <= N; i++) {
-        // arr[i] = sixLevel(i);
-        if (m > sixLevel(i)) {
-            m = sixLevel(i);
+        sL = sixLevel(i);
+        if (m > sL) {
+            //최솟값
+            m = sL;
+            //최소 베이컨 수를 가지는 번호
             t = i;
         }
     }
@@ -55,7 +58,10 @@ int sixLevel(int idx) {
         que.pop();
         sum += l;
         for (int i = 0; i < vec[k].size(); i++) {
-            if (!visited[vec[k][i]]) { //주석 작성하장
+            // vec[k][i]: 연결되어 있는 번호
+            //해당 번호 방문 여부 체크
+            if (!visited[vec[k][i]]) {
+                //방문 안했다면 큐에 푸쉬
                 que.push({vec[k][i], l + 1});
                 visited[vec[k][i]] = 1;
             }

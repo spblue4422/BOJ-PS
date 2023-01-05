@@ -1,10 +1,15 @@
 {
-    "files.associations": {
-        "stdio.h": "c",
-        "*.tcc": "cpp",
-        "vector": "cpp"
-    },
+	"files.associations": {
+		"stdio.h": "c",
+		"*.tcc": "cpp",
+		"vector": "cpp",
+		"iostream": "cpp",
+		"cmath": "cpp",
+		"limits": "cpp"
+	},
 
-    "C_Cpp.clang_format_style": "{ IndentWidth: 4, ColumnLimit: 80 }",
-    "C_Cpp.clang_format_fallbackStyle": "Google"
+	"C_Cpp.clang_format_style": "{ IndentWidth: 4, ColumnLimit: 200 }",
+	"C_Cpp.clang_format_fallbackStyle": "Google",
+	"C_Cpp.errorSquiggles": "Disabled",
+	"files.encoding": "euckr"
 }
