@@ -15,8 +15,8 @@ struct glac {
 
 queue<glac> que;
 
-// bfs를 사용해서 품.
-// 코드 개선의 여지가 상당히 많을것 같은데
+// bfs�? ?��?��?��?�� ?��.
+// 코드 개선?�� ?���?�? ?��?��?�� 많을�? 같�???��
 int main() {
     int N, M, dx, dy, tmp = 0, year = 0;
     scanf("%d %d", &N, &M);
@@ -27,28 +27,28 @@ int main() {
         }
     }
 
-    //최초 세팅. 빙하를 큐에 집어넣음.
+    // 최초 ?��?��. 빙하�? ?��?�� 집어?��?��.
     while (true) {
         for (int i = 1; i < N - 1; i++) {
             for (int j = 1; j < M - 1; j++) {
                 if (ocean[i][j] && !visited[i][j]) {
-                    //최초 푸쉬하고 방문여부 바꾸기
+                    // 최초 ?��?��?���? 방문?���? 바꾸�?
                     que.push({ocean[i][j], i, j});
                     visited[i][j] = 1;
-                    //큐가 빌때까지 탐색.
+                    // ?���? 빌때까�?? ?��?��.
                     while (!que.empty()) {
                         dx = que.front().x;
                         dy = que.front().y;
                         que.pop();
                         calcIce(dx, dy);
                     }
-                    //큐가 비어서 탐색이 끝났을때, tmp 증가
-                    // tmp의 역할은 빙산이 동강났는지를 판단
-                    // tmp가 1보다 크다면 동강나서 큐가 두번 돌았다는 뜻
-                    // tmp가 0이라면 얼음이 모두 녹았다는 뜻
+                    // ?���? 비어?�� ?��?��?�� ?��?��?��?��, tmp 증�??
+                    //  tmp?�� ?��?��??? 빙산?�� ?��강났?���?�? ?��?��
+                    //  tmp�? 1보다 ?��?���? ?��강나?�� ?���? ?���? ?��?��?��?�� ?��
+                    //  tmp�? 0?��?���? ?��?��?�� 모두 ?��?��?��?�� ?��
                     tmp++;
                 }
-                // tmp가 1이 아니라면 프로그램을 계속할 이유가 없으므로 break
+                // tmp�? 1?�� ?��?��?���? ?��로그?��?�� 계속?�� ?��?���? ?��?���?�? break
                 if (tmp != 1) {
                     break;
                 }
@@ -60,13 +60,13 @@ int main() {
         if (tmp > 1) {
             break;
         } else if (tmp == 0) {
-            // tmp가 0일때는, 출력을 0으로
+            // tmp�? 0?��?��?��, 출력?�� 0?���?
             year = 0;
             break;
         }
         year++;
 
-        //방문한 얼음 배열 초기화
+        // 방문?�� ?��?�� 배열 초기?��
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < M; j++) {
                 visited[i][j] = 0;
@@ -80,12 +80,12 @@ int main() {
     return 0;
 }
 
-// ocean 배열 조정 함수
+// ocean 배열 조정 ?��?��
 void calcIce(int x, int y) {
     int cnt = 0;
-    //방문 여부를 먼저 판단.
-    //방문하지 않았다면 바다인지 빙산인지 판단후 cnt 조정
-    //방문여부의 기준은 큐의 푸쉬 여부
+    // 방문 ?���?�? 먼�?? ?��?��.
+    // 방문?���? ?��?��?���? 바다?���? 빙산?���? ?��?��?�� cnt 조정
+    // 방문?���??�� 기�????? ?��?�� ?��?�� ?���?
     if (!visited[x - 1][y]) {
         if (ocean[x - 1][y]) {
             que.push({ocean[x - 1][y], x - 1, y});
